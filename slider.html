@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My project</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="image_src" href="../images">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="carouselbanner">
+    <ul class="banners">
+      <li class="banner displayed"><img src="images/delivery.png" /></li>
+      <li class="banner"><img src="images/sameDay.png" /></li>
+      <li class="banner"><img src="images/trustpilot.png" /></li>
+    </ul>
+  </div>
+  <article>
+    <p>
+      There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    </p>
+  </article>
+
+<script>
+$(document).ready(function() {
+  var $current = 2;
+  /*$('.banners').on('click', function() {*/
+
+  function banners() {
+    $('.banners').find('.displayed').toggleClass('displayed');
+    $('.banners').find('.banner').filter(':nth-child(' + $current + ')').addClass('displayed');
+    $current=$current+1;
+    if ($current==4) {$current=1;}
+  };
+    setInterval(banners,2000);
+  });
+
+  </script>
+</body>
+</html>

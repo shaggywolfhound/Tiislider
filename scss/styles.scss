@@ -1,0 +1,42 @@
+@import 'reset';
+@import 'var';
+@import 'transitions';
+
+.carouselbanner {
+  background-color: $grey;
+  height: 150px;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.banners {
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+
+  .banner {
+    //border: 1px solid $black;
+    margin-left: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+
+    img {
+      height: auto;
+      opacity: 0;
+      width: 100%;
+    }
+
+    &.displayed {
+      margin-left: 0;
+      opacity: 1;
+      transition: 1s;
+      transition-timing-function: easeOutQuart;
+      z-index: 200;
+      img {
+        opacity: 1;
+      }
+      }
+  }
+}
